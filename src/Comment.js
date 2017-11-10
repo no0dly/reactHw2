@@ -12,7 +12,7 @@ class Comment extends Component {
   render() {
     const { text } = this.props;
     return (
-      <div>
+      <div className="columns has-text-right">
         <p> { text } </p>
         <span
           className="delete"

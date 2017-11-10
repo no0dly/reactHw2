@@ -63,14 +63,18 @@ class NewsPost extends Component {
     const { commentInput } = this.state;
     return (
       <div>
+        <p> {text} </p>
         <input
           type="text"
           value={commentInput}
           onChange={this.handleChange}
           onKeyDown={this.handleKeyDown}
+          placeholder="Commend something"
+          className="input is-danger"
         />
-        <p> {text} </p>
-        {this.renderComments()}
+        <div className="column is-pulled-right">
+          {this.renderComments()}
+        </div>
       </div>
     );
   }
