@@ -1,11 +1,7 @@
 import React, {Component} from 'react';
 
 class Comment extends Component {
-  constructor(props) {
-    super(props);
-    this.handleDelete = this.handleDelete.bind(this);
-  }
-  handleDelete() {
+  handleDelete = () => {
     const { onDelete, id } = this.props;
     onDelete(id);
   }

@@ -4,21 +4,16 @@ import uuid from "uuid";
 import NewsPost from "./NewsPost";
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      news: [],
-      newsInput: ""
-    };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleKeyDown = this.handleKeyDown.bind(this);
-  }
-  handleChange(e) {
+  state = {
+    news: [],
+    newsInput: ""
+  };
+  handleChange = (e) => {
     this.setState({
       newsInput: e.target.value
     });
   }
-  handleKeyDown(e) {
+  handleKeyDown = (e) => {
     const { news, newsInput } = this.state;
     let newNews = {};
     if (e.keyCode === 13) {

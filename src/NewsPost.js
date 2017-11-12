@@ -9,22 +9,16 @@ const idCounter = () => {
 }
 
 class NewsPost extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      comments: [],
-      commentInput: ""
-    };
-    this.handleDelete = this.handleDelete.bind(this);
-    this.handleChange = this.handleChange.bind(this);
-    this.handleKeyDown = this.handleKeyDown.bind(this);
-  }
-  handleChange(e) {
+  state = {
+    comments: [],
+    commentInput: ""
+  };
+  handleChange = (e) => {
     this.setState({
       commentInput: e.target.value
     });
   };
-  handleKeyDown(e) {
+  handleKeyDown = (e) => {
     const { comments, commentInput } = this.state;
     let newComment = {};
     if (e.keyCode === 13) {
@@ -38,7 +32,7 @@ class NewsPost extends Component {
       });
     }
   };
-  handleDelete(id) {
+  handleDelete = (id) => {
     const { comments } = this.state;
     this.setState({
       comments: comments.filter( comment => comment.id !== id  )
